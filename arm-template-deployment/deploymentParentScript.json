@@ -4,9 +4,7 @@
   "variables": {
     "sourceCodeBranch": "master",
     "templateBaseUri": "[concat('https://raw.githubusercontent.com/logicmonitor/lm-logs-azure/',variables('sourceCodeBranch'),'/arm-template-deployment/')]",
-    "deploymentResourceGroupName": "[concat('lm-logs-',parameters('LM_Company_name'),'-',resourceGroup().Location,'-group')]",
-    "managedIdentityName": "[concat('msi-', variables('deploymentResourceGroupName'), '-deploy')]",
-    "managedIdentityId": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', variables('deploymentResourceGroupName'), '/providers/Microsoft.ManagedIdentity/userAssignedIdentities/', variables('managedIdentityName'))]"
+    "deploymentResourceGroupName": "[concat('lm-logs-',parameters('LM_Company_name'),'-',resourceGroup().Location,'-group')]"
   },
   "parameters": {
     "subscriptionId": {
@@ -51,9 +49,6 @@
           },
           "subscriptionId": {
             "value": "[parameters('subscriptionId')]"
-          },
-          "managedIdentity": {
-            "value": "[variables('managedIdentityId')]"
           },
           "utcNow": {
             "value": "[parameters('forceUpdateTag')]"

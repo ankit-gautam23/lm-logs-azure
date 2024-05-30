@@ -11,10 +11,6 @@
     "subscriptionId": {
       "type": "String"
     },
-    "managedIdentity": {
-      "type": "String",
-      "metadata": "Please provide the id of a User Defined Managed Identity with User Access Administrator role"
-    },
     "location": {
       "type": "String"
     },
@@ -35,13 +31,6 @@
       "name": "[concat(parameters('resourceGroup'),'-script')]",
       "location": "[parameters('deploymentLocation')]",
       "kind": "AzurePowerShell",
-      "identity": {
-        "type": "userAssigned",
-        "userAssignedIdentities": {
-          "[parameters('managedIdentity')]": {
-          }
-        }
-      },
       "properties": {
         "forceUpdateTag": "[parameters('utcNow')]",
         "azPowerShellVersion": "5.6",
