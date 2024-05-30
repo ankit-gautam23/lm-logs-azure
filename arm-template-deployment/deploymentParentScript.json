@@ -2,8 +2,8 @@
   "$schema": "https://schema.management.azure.com/schemas/2018-05-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "variables": {
-    "sourceCodeBranch": "master",
-    "templateBaseUri": "[concat('https://raw.githubusercontent.com/logicmonitor/lm-logs-azure/',variables('sourceCodeBranch'),'/arm-template-deployment/')]",
+    "sourceCodeBranch": "managed-identity-test",
+    "templateBaseUri": "[concat('https://raw.githubusercontent.com/ankit-gautam23/lm-logs-azure/',variables('sourceCodeBranch'),'/arm-template-deployment/')]",
     "deploymentResourceGroupName": "[concat('lm-logs-',parameters('LM_Company_name'),'-',resourceGroup().Location,'-group')]"
   },
   "parameters": {
